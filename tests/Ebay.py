@@ -1,6 +1,6 @@
 import unittest
 from selenium import webdriver
-from selenium.webdriver.common.by import By
+from homepage import SearchTab
 
 
 class Ebay(unittest.TestCase):
@@ -12,8 +12,8 @@ class Ebay(unittest.TestCase):
         self.driver.get("https://www.ebay.com/")
 
     def test_home_page_loaded(self):
-        # Check the Ebay logo
-        return True if self.driver.find_element(By.ID, 'gh-logo') else False
+        home_page = SearchTab(self.driver)
+        self.assertTrue(home_page.check_page_loaded())
 
 
 if __name__ == '__main__':
