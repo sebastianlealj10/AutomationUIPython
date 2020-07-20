@@ -25,7 +25,6 @@ class Ebay(unittest.TestCase):
         search_page = SortItems(self.driver)
         search_page.pick_ten_size_puma()
         results = search_page.results_number()
-        time.sleep(2)
         print("Total resuts for the search: " + str(results))
         print("........................................................................................\n")
         search_page.sort_items()
