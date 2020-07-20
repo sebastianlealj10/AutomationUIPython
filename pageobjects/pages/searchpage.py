@@ -49,3 +49,17 @@ class SortItems(BasePage):
         self.sort_list()
         self.pick_lowest_first()
         time.sleep(2)
+
+    def pick_element_names(self):
+        names = self.driver.find_elements(*SearchPageLocators.ITEMS_NAME)
+        return names
+
+    def pick_element_prices(self):
+        prices = self.driver.find_elements(*SearchPageLocators.ITEMS_PRICE)
+        return prices
+
+    def take_products(self, number_of_items):
+        element_names = self.pick_element_names()
+        element_prices = self.pick_element_prices()
+        my_items = build_items_list(self, element_names, element_prices, number_of_items)
+        return my_items
