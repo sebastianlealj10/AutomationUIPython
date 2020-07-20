@@ -20,11 +20,11 @@ def sort_by_name_asc(sub_li):
     return sorted(sub_li, key=lambda x: x[0])
 
 
-def build_items_list(self, items_name, items_price, items_number):
+def build_items_list(items_name, items_price, items_number):
     items = []
     for x in range(items_number):
         price = fix_price(items_price[x].text)
-        items.append([items_name[x + 1].text, price])
+        items.append([items_name[x].text, price])
     return items
 
 

@@ -61,5 +61,5 @@ class SortItems(BasePage):
     def take_products(self, number_of_items):
         element_names = self.pick_element_names()
         element_prices = self.pick_element_prices()
-        my_items = build_items_list(self, element_names, element_prices, number_of_items)
+        my_items = build_items_list(element_names, element_prices, number_of_items)
         return my_items
