@@ -14,7 +14,6 @@ class Ebay(unittest.TestCase):
         self.driver.get("https://www.ebay.com/")
 
     def test_sort_items_asc(self):
-        number_of_items = 5
         home_page = SearchTab(self.driver)
         self.assertTrue(home_page.check_page_loaded())
         home_page.search_shoes()
