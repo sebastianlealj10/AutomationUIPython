@@ -14,6 +14,10 @@ class Ebay(unittest.TestCase):
         self.driver.implicitly_wait(30)
         self.driver.get("https://www.ebay.com/")
 
+    def tearDown(self):
+        # close the browser window
+        self.driver.quit()
+
     def test_items_are_sorted_by_lowest_price(self, number_of_items=5):
         home_page = SearchTab(self.driver)
         self.assertTrue(home_page.check_page_loaded())
