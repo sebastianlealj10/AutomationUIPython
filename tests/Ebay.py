@@ -13,7 +13,7 @@ class Ebay(unittest.TestCase):
         self.driver.implicitly_wait(30)
         self.driver.get("https://www.ebay.com/")
 
-    def test_search_shoes(self):
+    def test_search_shoes_puma(self):
         home_page = SearchTab(self.driver)
         self.assertTrue(home_page.check_page_loaded())
         home_page.search_shoes()
