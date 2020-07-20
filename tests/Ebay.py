@@ -1,4 +1,3 @@
-import time
 import unittest
 from selenium import webdriver
 from homepage import SearchTab
