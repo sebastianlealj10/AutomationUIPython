@@ -13,7 +13,8 @@ class Ebay(unittest.TestCase):
         self.driver.implicitly_wait(30)
         self.driver.get("https://www.ebay.com/")
 
-    def test_search_shoes_puma(self):
+    def test_sort_items_asc(self):
+        number_of_items = 5
         home_page = SearchTab(self.driver)
         self.assertTrue(home_page.check_page_loaded())
         home_page.search_shoes()
@@ -23,6 +24,7 @@ class Ebay(unittest.TestCase):
         time.sleep(2)
         print("Total resuts for the search: " + str(results))
         print("........................................................................................\n")
+        search_page.sort_items()
 
 
 if __name__ == '__main__':
