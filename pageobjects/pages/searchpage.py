@@ -1,3 +1,8 @@
+import time
+
+from selenium.webdriver import ActionChains
+
+from items import build_items_list
 from locators import SearchPageLocators
 
 
@@ -28,3 +33,19 @@ class SortItems(BasePage):
     def results_number(self):
         element = self.driver.find_element(*SearchPageLocators.RESULTS_NUMBER)
         return element.text
+
+    def sort_list(self):
+        element = self.driver.find_element(*SearchPageLocators.SORT_BUTTON)
+        hover = ActionChains(self.driver).move_to_element(element)
+        hover.click().perform()
+
+    def pick_lowest_first(self):
+        element = self.driver.find_element(*SearchPageLocators.CHECK_LOWEST_FIRST)
+        hover = ActionChains(self.driver).move_to_element(element)
+        hover.click().perform()
+
+    def sort_items(self):
+        time.sleep(5)
+        self.sort_list()
+        self.pick_lowest_first()
+        time.sleep(2)
